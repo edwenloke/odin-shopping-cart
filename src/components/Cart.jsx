@@ -8,7 +8,7 @@ function Cart() {
   const { cart, setCart } = useOutletContext();
 
   const totalItem = cart.reduce((total, item) => total + item.quantity, 0);
-  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+  const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   if (cart.length === 0) {
     return (
